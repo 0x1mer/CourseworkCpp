@@ -1,0 +1,12 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/App/">
+    <Project Path="App/Coursework.App.vcxproj" Id="312ec154-8717-4767-86d6-d07131e2c549" />
+  </Folder>
+  <Folder Name="/Core/">
+    <Project Path="Core/Coursework.Core.vcxproj" Id="24efba47-c74e-49d8-9772-4ba6469179aa" />
+  </Folder>
+</Solution>
