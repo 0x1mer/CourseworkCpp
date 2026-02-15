@@ -4,7 +4,6 @@
 
 namespace coursework::types
 {
-
 	// Type aliases for time components.
 	using Hour = std::uint32_t;
 	using Minute = std::uint32_t;

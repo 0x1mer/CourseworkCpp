@@ -11,7 +11,7 @@ namespace coursework::core
     {
 	}
 
-    DepartureTime::DepartureTime(std::uint32_t hour, std::uint32_t minute, std::uint32_t second)
+    DepartureTime::DepartureTime(types::Hour hour, types::Minute minute, types::Second second)
         : m_hour(hour), m_minute(minute), m_second(second)
     {
         if (hour > constants::time::kMaxHourValue)
@@ -25,35 +25,30 @@ namespace coursework::core
         if (second > constants::time::kMaxSecondValue)
         {
             throw std::out_of_range("Second out of range");
-        }
+		}
     }
 
-    DepartureTime::DepartureTime(DepartureTime const& other) noexcept
-        : m_hour(other.m_hour), m_minute(other.m_minute), m_second(other.m_second)
-    {
-    }
-
-    std::uint32_t DepartureTime::GetHour() const
+    types::Hour DepartureTime::GetHour() const
     {
         return m_hour;
     }
 
-    std::uint32_t DepartureTime::GetMinute() const
+    types::Minute DepartureTime::GetMinute() const
     {
         return m_minute;
     }
 
-    std::uint32_t DepartureTime::GetSecond() const
+    types::Second DepartureTime::GetSecond() const
     {
         return m_second;
     }
 
-    std::uint32_t DepartureTime::GetTotalSeconds() const
+    types::Second DepartureTime::GetTotalSeconds() const
     {
         return m_hour * 3600 + m_minute * 60 + m_second;
     }
 
-    void DepartureTime::SetHour(std::uint32_t hour)
+    void DepartureTime::SetHour(types::Hour hour)
     {
         if (hour > constants::time::kMaxHourValue)
         {
@@ -62,7 +57,7 @@ namespace coursework::core
         m_hour = hour;
     }
 
-    void DepartureTime::SetMinute(std::uint32_t minute)
+    void DepartureTime::SetMinute(types::Minute minute)
     {
         if (minute > constants::time::kMaxMinuteValue)
         {
@@ -71,7 +66,7 @@ namespace coursework::core
         m_minute = minute;
     }
 
-    void DepartureTime::SetSecond(std::uint32_t second)
+    void DepartureTime::SetSecond(types::Second second)
     {
         if (second > constants::time::kMaxSecondValue)
         {
@@ -80,7 +75,7 @@ namespace coursework::core
         m_second = second;
     }
 
-    void DepartureTime::SetTime(std::uint32_t hour, std::uint32_t minute, std::uint32_t second)
+    void DepartureTime::SetTime(types::Hour hour, types::Minute minute, types::Second second)
     {
         SetHour(hour);
         SetMinute(minute);
@@ -121,7 +116,7 @@ namespace coursework::core
         return *this + (-seconds);
     }
 
-    DepartureTime DepartureTime::FromTotalSeconds(std::uint32_t totalSeconds)
+    DepartureTime DepartureTime::FromTotalSeconds(types::Second totalSeconds)
     {
         totalSeconds %= constants::time::kSecondsPerDay;
 

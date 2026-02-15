@@ -3,6 +3,7 @@
 
 namespace coursework::app
 {
+
 	void ConsoleHeaderRenderer::Render()
 	{
 		std::cout << R"(
@@ -16,4 +17,5 @@ ___________             .__         _________      .__               .___    .__
 
 )";
 	}
+
 } // namespace coursework::app

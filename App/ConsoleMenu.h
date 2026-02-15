@@ -1,4 +1,5 @@
 #pragma once
+
 #include "TrainSchedule.h"
 
 namespace coursework::app
@@ -14,4 +15,5 @@ namespace coursework::app
 			static void PrintMenu();
 			static void AddTrain(core::TrainSchedule& schedule);
 	};
+
 } // namespace coursework::app
