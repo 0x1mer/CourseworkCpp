@@ -1,12 +1,9 @@
 #pragma once
-#include <string>
-#include "DepartureTime.h"
 
-#ifdef COURSEWORK_CORE_EXPORTS
-	#define CORE_API __declspec(dllexport)
-#else
-	#define CORE_API __declspec(dllimport)
-#endif
+#include <string>
+
+#include "DepartureTime.h"
+#include "ÑoreExport.h"
 
 namespace coursework::core
 {

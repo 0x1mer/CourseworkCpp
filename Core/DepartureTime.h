@@ -1,11 +1,8 @@
 #pragma once
+
 #include <cstdint>
 
-#ifdef COURSEWORK_CORE_EXPORTS
-	#define CORE_API __declspec(dllexport)
-#else
-	#define CORE_API __declspec(dllimport)
-#endif
+#include "ÑoreExport.h"
 
 namespace coursework::core
 {

@@ -1,11 +1,7 @@
 #pragma once
-#include "TrainInfo.h"
 
-#ifdef COURSEWORK_CORE_EXPORTS
-	#define CORE_API __declspec(dllexport)
-#else
-	#define CORE_API __declspec(dllimport)
-#endif
+#include "TrainInfo.h"
+#include "ÑoreExport.h"
 
 namespace coursework::core
 {
