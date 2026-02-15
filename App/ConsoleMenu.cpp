@@ -1,5 +1,6 @@
-#include "ConsoleMenu.h"
 #include <iostream>
+
+#include "ConsoleMenu.h"
 #include "ConsoleTableRenderer.h"
 
 namespace coursework::app
@@ -10,7 +11,16 @@ namespace coursework::app
 		{
 			PrintMenu();
 			int choice{};
-			std::cin >> choice;
+
+			while (!(std::cin >> choice))
+			{
+				std::cout << "Invalid input. Please choose a walid number from list below: \n";
+				PrintMenu();
+
+				std::cin.clear();
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			}
+
 			switch (choice)
 			{
 				case 1:
