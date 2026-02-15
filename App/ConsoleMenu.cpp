@@ -1,5 +1,6 @@
 #include <iostream>
 
+#include "ConsoleColors.h"
 #include "ConsoleMenu.h"
 #include "ConsoleTableRenderer.h"
 
@@ -14,7 +15,11 @@ namespace coursework::app
 
 			while (!(std::cin >> choice))
 			{
-				std::cout << "Invalid input. Please choose a walid number from list below: \n";
+				std::cout << colors::colorize(
+						"Invalid input. Please choose a walid number from list below: \n",
+						colors::color::red
+				);
+
 				PrintMenu();
 
 				std::cin.clear();
@@ -35,7 +40,10 @@ namespace coursework::app
 				case 3:
 					return;
 				default:
-					std::cout << "Invalid choice. Please try again.\n";
+					std::cout << colors::colorize(
+						"Invalid choice. Please try again.\n",
+						colors::color::red
+					);
 			}
 		}
 	}
