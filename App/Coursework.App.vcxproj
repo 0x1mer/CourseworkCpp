@@ -141,13 +141,11 @@
     <ClCompile Include="ConsoleHeaderRenderer.cpp" />
     <ClCompile Include="ConsoleMenu.cpp" />
     <ClCompile Include="ConsoleTableRenderer.cpp" />
-    <ClCompile Include="IConsoleRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ConsoleHeaderRenderer.h" />
     <ClInclude Include="ConsoleMenu.h" />
     <ClInclude Include="ConsoleTableRenderer.h" />
-    <ClInclude Include="IConsoleRenderer.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Coursework.Core.vcxproj">

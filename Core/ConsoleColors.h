@@ -6,17 +6,18 @@
 
 namespace coursework::colors
 {
-	// ANSI escape codes for console colors
+    // ANSI escape codes for console colors
     enum class color
     {
         red,
         green,
         yellow,
         blue,
+        gray,
         reset
     };
 
-	// Converts a color enum to its corresponding ANSI escape code string.
+    // Converts a color enum to its corresponding ANSI escape code string.
     inline constexpr const char* to_string(color c)
     {
         switch (c)
@@ -25,12 +26,13 @@ namespace coursework::colors
         case color::green:  return "\033[32m";
         case color::yellow: return "\033[33m";
         case color::blue:   return "\033[34m";
+        case color::gray:   return "\033[90m";
         case color::reset:  return "\033[0m";
         default:            return "\033[0m";
         }
     }
 
-	// Helper function to colorize a string with the specified color.
+    // Helper function to colorize a string with the specified color.
     inline std::string colorize(std::string_view text, color c)
     {
         return std::string(to_string(c)) + std::string(text) + to_string(color::reset);

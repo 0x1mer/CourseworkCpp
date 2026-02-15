@@ -51,9 +51,20 @@ namespace coursework::app
 	void ConsoleMenu::PrintMenu()
 	{
 		std::cout << "\nTrain Schedule Management\n";
-		std::cout << "1. Add Train\n";
-		std::cout << "2. View Schedule\n";
-		std::cout << "3. Exit\n";
+
+		std::cout << "1. " << colors::colorize(
+			"Add Train\n",
+			colors::color::gray
+		);
+		std::cout << "2. " << colors::colorize(
+			"View Schedule\n",
+			colors::color::gray
+		);
+		std::cout << "3. " << colors::colorize(
+			"Exit\n\n",
+			colors::color::gray
+		);
+
 		std::cout << "Enter your choice: ";
 	}
 
