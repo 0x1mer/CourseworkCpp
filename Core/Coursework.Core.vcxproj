@@ -144,9 +144,11 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="DepartureTime.h" />
+    <ClInclude Include="TimeDefinitions.h" />
     <ClInclude Include="TrainInfo.h" />
     <ClInclude Include="TrainIterator.h" />
     <ClInclude Include="TrainSchedule.h" />
+    <ClInclude Include="СoreExport.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />

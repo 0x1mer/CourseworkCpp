@@ -6,20 +6,6 @@
 
 namespace coursework::core
 {
-	/// Minimum allowed value for time components.
-	inline constexpr std::uint32_t kMinValue       = 0;
-
-	/// Maximum hour (0-23).
-	inline constexpr std::uint32_t kMaxHourValue   = 23;
-
-	/// Maximum minute (0-59).
-	inline constexpr std::uint32_t kMaxMinuteValue = 59; 
-
-	/// Maximum second (0-59).
-	inline constexpr std::uint32_t kMaxSecondValue = 59; 
-
-	/// Total seconds in a day.
-	inline constexpr std::uint32_t kSecondsPerDay  = 24 * 60 * 60; 
 
 	/// Represents a time of day with hour, minute, and second components.
 	class CORE_API DepartureTime
@@ -103,4 +89,5 @@ namespace coursework::core
 
 			static DepartureTime FromTotalSeconds(std::uint32_t totalSeconds);
 	};
+
 } // namespace coursework::core

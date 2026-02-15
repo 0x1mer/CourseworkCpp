@@ -32,9 +32,16 @@ namespace coursework::colors
         }
     }
 
+    // Stream operator for color enum (acts like a manipulator).
+    inline std::ostream& operator<<(std::ostream& os, color c)
+    {
+        return os << to_string(c);
+    }
+
     // Helper function to colorize a string with the specified color.
     inline std::string colorize(std::string_view text, color c)
     {
         return std::string(to_string(c)) + std::string(text) + to_string(color::reset);
     }
-}
+
+} // namespace coursework::colors

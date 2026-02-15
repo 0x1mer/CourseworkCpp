@@ -1,6 +1,9 @@
 #include "pch.h"
 #include "TrainSchedule.h"
+
 #include <stdexcept>
+
+#include "TimeDefinitions.h"
 
 namespace coursework::core
 {
@@ -62,7 +65,7 @@ namespace coursework::core
 	const TrainInfo* TrainSchedule::FindNearestTrain(const DepartureTime& time, std::string destination) const
 	{
 		const TrainInfo* nearestTrain = nullptr;
-		std::uint32_t minTimeDiff = kSecondsPerDay;
+		std::uint32_t minTimeDiff = constants::time::kSecondsPerDay;
 
 		for (const auto& train : m_trains)
 		{

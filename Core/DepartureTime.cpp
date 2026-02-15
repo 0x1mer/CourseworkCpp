@@ -1,6 +1,9 @@
 #include "pch.h"
 #include "DepartureTime.h"
+
 #include <stdexcept>
+
+#include "TimeDefinitions.h"
 
 namespace coursework::core
 {
@@ -11,15 +14,15 @@ namespace coursework::core
     DepartureTime::DepartureTime(std::uint32_t hour, std::uint32_t minute, std::uint32_t second)
         : m_hour(hour), m_minute(minute), m_second(second)
     {
-        if (hour > kMaxHourValue)
+        if (hour > constants::time::kMaxHourValue)
         {
             throw std::out_of_range("Hour out of range");
         }
-        if (minute > kMaxMinuteValue)
+        if (minute > constants::time::kMaxMinuteValue)
         {
             throw std::out_of_range("Minute out of range");
         }
-        if (second > kMaxSecondValue)
+        if (second > constants::time::kMaxSecondValue)
         {
             throw std::out_of_range("Second out of range");
         }
@@ -52,7 +55,7 @@ namespace coursework::core
 
     void DepartureTime::SetHour(std::uint32_t hour)
     {
-        if (hour > kMaxHourValue)
+        if (hour > constants::time::kMaxHourValue)
         {
             throw std::out_of_range("Hour out of range");
         }
@@ -61,7 +64,7 @@ namespace coursework::core
 
     void DepartureTime::SetMinute(std::uint32_t minute)
     {
-        if (minute > kMaxMinuteValue)
+        if (minute > constants::time::kMaxMinuteValue)
         {
             throw std::out_of_range("Minute out of range");
         }
@@ -70,7 +73,7 @@ namespace coursework::core
 
     void DepartureTime::SetSecond(std::uint32_t second)
     {
-        if (second > kMaxSecondValue)
+        if (second > constants::time::kMaxSecondValue)
         {
             throw std::out_of_range("Second out of range");
         }
@@ -96,7 +99,7 @@ namespace coursework::core
 
         if (diff < 0)
         {
-            diff += kSecondsPerDay; 
+            diff += constants::time::kSecondsPerDay;
         }
         return FromTotalSeconds(static_cast<std::uint32_t>(diff));
     }
@@ -104,11 +107,11 @@ namespace coursework::core
     DepartureTime DepartureTime::operator+(int seconds) const
     {
         std::int32_t total = static_cast<std::int32_t>(GetTotalSeconds()) + seconds;
-        total %= static_cast<int>(kSecondsPerDay);
+        total %= static_cast<int>(constants::time::kSecondsPerDay);
 
         if (total < 0)
         {
-            total += kSecondsPerDay;
+            total += constants::time::kSecondsPerDay;
         }
         return FromTotalSeconds(static_cast<std::uint32_t>(total));
     }
@@ -120,7 +123,7 @@ namespace coursework::core
 
     DepartureTime DepartureTime::FromTotalSeconds(std::uint32_t totalSeconds)
     {
-        totalSeconds %= kSecondsPerDay;
+        totalSeconds %= constants::time::kSecondsPerDay;
 
         std::uint32_t hour = totalSeconds / 3600;
         totalSeconds %= 3600;

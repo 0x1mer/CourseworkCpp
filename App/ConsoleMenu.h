@@ -3,11 +3,11 @@
 
 namespace coursework::app
 {
-	/// ConsoleMenu class provides a simple text-based interface for managing the train schedule.
+	// ConsoleMenu class provides a simple text-based interface for managing the train schedule.
 	class ConsoleMenu
 	{
 		public:
-			/// Displays the menu and handles user input to manage the train schedule.
+			// Displays the menu and handles user input to manage the train schedule.
 			static void Show(core::TrainSchedule& schedule);
 
 		private:
